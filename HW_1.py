@@ -27,9 +27,7 @@ class Order:
 def print_order(order: Order):
     print(f"\n{order.table}")
     print("Ваш заказ:")
-    for dish in order.dishes.values():
-        dish: Dish
-        print(f"  Блюдо: {dish.name}, цена: {dish.price}") 
+    [print(f"  Блюдо: {dish.name}, цена: {dish.price}") for dish in order.dishes.values()]
     print(f"К оплате: {order.calculate_total()}")
     print("Спасибо за посещение нашего магазина ^-^\n")
 
