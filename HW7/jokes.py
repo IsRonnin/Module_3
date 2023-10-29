@@ -29,7 +29,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Jokes (
 
 def add_joke(Joke):
     cur.execute(f'''INSERT OR IGNORE INTO Jokes(Joke) VALUES("{Joke}")''')
-
+    conn.commit()
 [add_joke(i) for i in jokes]
 
 cur.execute('''SELECT * FROM Jokes''')
